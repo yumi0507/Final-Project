@@ -1,0 +1,17 @@
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\bin\Debug\net6.0-windows\Client_test.exe
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\bin\Debug\net6.0-windows\Client_test.deps.json
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\bin\Debug\net6.0-windows\Client_test.runtimeconfig.json
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\bin\Debug\net6.0-windows\Client_test.dll
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\bin\Debug\net6.0-windows\Client_test.pdb
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.csproj.AssemblyReference.cache
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.Form1.resources
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.csproj.GenerateResource.cache
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.AssemblyInfoInputs.cache
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.AssemblyInfo.cs
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.csproj.CoreCompileInputs.cache
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.dll
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\refint\Client_test.dll
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.pdb
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\Client_test.genruntimeconfig.cache
+C:\Users\miche\Desktop\lesson\sophomore_2\Computer Networks\Final Project\Client_test\Client_test\obj\Debug\net6.0-windows\ref\Client_test.dll
