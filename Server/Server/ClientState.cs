@@ -11,6 +11,7 @@ namespace Server
     {
         int iD;
         string name;
+        int time;
 
         public TcpClient tcpClient;
 
@@ -18,12 +19,14 @@ namespace Server
         {
             this.iD = iD;
             this.name = new string("");
+            time = 3;
             this.tcpClient = tcpClient;
         }
 
         #region Get Data
         public int ID { get { return iD; } } 
         public string Name { get { return name; } set { name = value; } }
+        public int Time { get { return time; } set { time = value; } }
         public TcpClient Socket { get { return tcpClient; } }
         #endregion
 

@@ -22,7 +22,10 @@ namespace Server
         string Port;
         int clientID;
         int quesID;
+        int ansID;
+        int left;
         string Ans;
+        Thread Connection;
 
         List<ClientState> players;
 
@@ -32,10 +35,10 @@ namespace Server
             Address = GetLocalIpAddress();
             Port = "8080";
             tb_IP.Text = Address + ":" + Port;
-            tcpListener = new TcpListener(IPAddress.Parse(Address), int.Parse(Port));
 
             clientID = 0;
             quesID = 0;
+            ansID = 1;
             players = new List<ClientState>();
 
         }
@@ -67,6 +70,9 @@ namespace Server
                     if (new_client.Connected)
                     {
                         players.Add(new ClientState(clientID, new_client));
+                        Thread Listen_to_Client = new Thread(Listen); 
+                        Listen_to_Client.IsBackground = true;
+                        Listen_to_Client.Start(new_client);
                         SendToClient(clientID, "ID" + clientID.ToString(), new_client);
                         ADD_TO_LIST("Client " + players[clientID].Name + " :" + new_client.Client.RemoteEndPoint + " is joined");
                         clientID++;
@@ -79,7 +85,7 @@ namespace Server
             }
         }
 
-        public void Listening(object obj)
+        public void Listen(object obj)
         {
             TcpClient this_client = (TcpClient)obj;
             NetworkStream networkStream = this_client.GetStream();
@@ -95,65 +101,68 @@ namespace Server
                         string Message = Encoding.UTF8.GetString(buffer, 0, BytesReaded);
                         string Command = Message.Substring(0, 2);
                         string iD = Message.Substring(2, 1);
-                        ADD_TO_LIST("Receive- '" + Message + "' from Client " + iD);
+                        int ID = int.Parse(iD);
+                        ADD_TO_LIST("RCV- '" + Message + "' from Client " + iD);
                         switch (Command)
                         {
-                            case "RD":
+                            case "ID":
                                 {
-                                    for (int i = 0; i < players.Count; i++)
-                                    {
-                                        if (i == 0)
-                                            SendToClient(i, "YTA", players[0].Socket);    // Your Turn to Answer
-                                        else
-                                            SendToClient(i, "NA0", players[i].Socket);    // Next Answer from Next(id)
-                                    }
+                                    string name = Message.Substring(3);
+                                    players[ID].Name = name;
+                                    break;
                                 }
-                                break;
+                            case "PL":
+                                {
+                                    for(int i = 0; i < players.Count; i++)
+                                    {
+                                        for(int j = 0; j < players.Count; j++)
+                                        {
+                                            SendToClient(i, "AP" + players[j].Name, players[i].Socket);
+                                        }
+                                    }
+                                    NewRound(true);
+                                    break;
+                                }
                             case "QU":
                                 {
-                                    string ID = Message.Substring(2);
-                                    int id = int.Parse(ID);
                                     Ans = Message.Substring(3);
                                     for (int i = 0; i < players.Count; i++)
                                     {
-                                        SendToClient(i, "FQ"+ID, players[i].Socket);    // ID Finished Questioning
-                                        if (i == Next(id))
-                                            SendToClient(i, "YTA", players[Next(id)].Socket);    // Your Turn to Answer
-                                        else
-                                            SendToClient(i, "NA" + Next(id).ToString(), players[Next(id)].Socket);    // Next Answer from Next(id)
+                                        SendToClient(i, "FQ" + ID, players[i].Socket);    // ID Finished Questioning
                                     }
+                                    NextAns(true);
+                                    break;
                                 }
-                                break;
                             case "AN":
                                 {
-                                    string ID = Message.Substring(2);
-                                    int id = int.Parse(ID);
                                     string temp = Message.Substring(3);
-                                    if(temp == Ans)
+                                    if(Check(temp, ID))
                                     {
-                                        Next();
                                         for(int i = 0; i < players.Count; i++)
                                         {
-                                            SendToClient(i, "RE" + ID, players[i].Socket);  // Round End
-                                            if(i == quesID)
-                                                SendToClient(quesID, "YTQ", players[Next(id)].Socket);    // Your Turn to Question
-                                            else
-                                                SendToClient(i, "NQ" + quesID.ToString(), players[i].Socket);    // Next Question from quesID
+                                            SendToClient(i, "RE" + ID, players[i].Socket);  // Round End (ID is correct)
                                         }
+                                        NewRound();
                                     }
                                     else
                                     {
                                         for (int i = 0; i < players.Count; i++)
                                         {
-                                            SendToClient(i, "WA" + ID + temp, players[i].Socket);   // Wrong Answewr
-                                            if (i == Next(id))
-                                                SendToClient(i, "YTA", players[Next(id)].Socket);    // Your Turn to Answer
-                                            else
-                                                SendToClient(i, "NA" + Next(id).ToString(), players[i].Socket);    // Next Answer from Next(id)
+                                            SendToClient(i, "WA" + ID, players[i].Socket);   // Wrong Answewr
+                                        }
+                                        if (left > 0)
+                                            NextAns();
+                                        else
+                                        {
+                                            for (int i = 0; i < players.Count; i++)
+                                            {
+                                                SendToClient(i, "NO" + Ans, players[i].Socket);
+                                            }
+                                            NewRound();
                                         }
                                     }
+                                    break;
                                 }
-                                break;
                             default:
                                 MessageBox.Show("Wrong instruction");
                                 break;
@@ -172,7 +181,7 @@ namespace Server
                 if (networkStream.CanWrite)
                 {
                     networkStream.Write(data, 0, data.Length);
-                    ADD_TO_LIST("Send- '" + Mesaage + "' to Client " + Client_ID);
+                    ADD_TO_LIST("SND- '" + Mesaage + "' to Client " + Client_ID);
                     Thread.Sleep(50);
                 }
                 else
@@ -185,48 +194,101 @@ namespace Server
         }
         #endregion
         #region Game
-        public void Next()
-        {
-            if (quesID == players.Count - 1)
-                quesID = 0;
-            else
-                quesID++;
-        }
-
-        public int Next(int now)
-        {
-            if(now + 1 == quesID)
-                return Next(now+1);
-            else if (now == players.Count - 1)
-                return 0;
-            else
-                return now + 1;
-        }
-
-        public string Check(string temp)
+        public bool Check(string temp, int ID)
         {
             int a = 0;
             int b = 0;
-            for(int i = 0; i < 4; i++) 
+            for (int i = 0; i < 4; i++)
             {
-                for(int j = 0; j < 4; j++)
+                for (int j = 0; j < 4; j++)
                 {
-
+                    if (temp[i] == Ans[j])
+                    {
+                        if (i == j) a++;
+                        else b++;
+                    }
                 }
             }
 
-            return a.ToString() + "A" + b.ToString() + "B";
+            for (int i = 0; i < players.Count; i++)
+            {
+                SendToClient(i, "FA" + ID.ToString() + temp, players[i].Socket); // Finish answering
+                SendToClient(i, "AB" + a.ToString() + "A" + b.ToString() + "B", players[i].Socket);
+            }
+
+            if (a == 4)
+                return true;
+            else
+            {
+                players[ID].Time--;
+                return false;
+            }
+        }
+
+        public void Next(bool ques = false)
+        {
+            if (ques)
+            {
+                if (quesID == players.Count - 1)
+                    quesID = 0;
+                else
+                    quesID++;
+            }
+
+            if (ansID == players.Count - 1)
+                ansID = 0;
+            else
+                ansID++;
+
+            if (players[ansID].Time == 0)
+            {
+                left--;
+                if(left > 0)
+                    Next();
+            }
+            if (ansID == quesID)
+                Next();
+        }
+
+        public void NextAns(bool first = false)
+        {
+            if(!first)
+                Next();
+            for(int i = 0; i < players.Count; i++)
+            {
+                if (i == ansID)
+                    SendToClient(i, "YTA", players[i].Socket);    // Your Turn to Answer
+                else
+                    SendToClient(i, "NA" + ansID.ToString(), players[i].Socket);    // Next Answer from ansID
+            }
+        }
+
+        public void NewRound(bool first = false)
+        {
+            if(!first)
+                Next(true);
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (i == quesID)
+                    SendToClient(i, "YTQ", players[i].Socket);    // Your Turn to Qusetion
+                else
+                    SendToClient(i, "NQ" + quesID.ToString(), players[i].Socket);    // Next Question from quesID
+
+                players[i].Time = 4;
+            }
+            left = players.Count - 1;
         }
         #endregion
         #region Button
         private void btn_ServerStart_Click(object sender, EventArgs e)
         {
+            tcpListener = new TcpListener(IPAddress.Parse(Address), int.Parse(Port));
             tcpListener.Start();
             ADD_TO_LIST("Waiting For Connections");
-            Thread connectionThread = new Thread(AcceptConnections);
+            Connection = new Thread(AcceptConnections);
             ADD_TO_LIST("Server is listening at " + Address + ":" + Port);
-            connectionThread.IsBackground = true;
-            connectionThread.Start();
+            Connection.IsBackground = true;
+            Connection.Start();
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

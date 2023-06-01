@@ -70,6 +70,14 @@ namespace Client
             HudPlayer3 = new PictureBox();
             HudPlayer4 = new PictureBox();
             btn_play = new Button();
+            lbl_player1_name = new Label();
+            lbl_player1_ans = new Label();
+            lbl_player2_ans = new Label();
+            lbl_player2_name = new Label();
+            lbl_player3_ans = new Label();
+            lbl_player3_name = new Label();
+            lbl_player4_ans = new Label();
+            lbl_player4_name = new Label();
             ((ISupportInitialize)HudPlayer1).BeginInit();
             ((ISupportInitialize)HudPlayer2).BeginInit();
             ((ISupportInitialize)HudPlayer3).BeginInit();
@@ -149,12 +157,12 @@ namespace Client
             // 
             // listBox1
             // 
-            listBox1.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            listBox1.Font = new Font("KenVector Future Thin", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 36;
-            listBox1.Location = new Point(932, 205);
+            listBox1.ItemHeight = 31;
+            listBox1.Location = new Point(876, 205);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(417, 508);
+            listBox1.Size = new Size(473, 500);
             listBox1.TabIndex = 7;
             // 
             // btn_send
@@ -344,7 +352,7 @@ namespace Client
             HudPlayer1.BackColor = Color.Transparent;
             HudPlayer1.BackgroundImage = Properties.Resources.hudPlayer_pink;
             HudPlayer1.BackgroundImageLayout = ImageLayout.Stretch;
-            HudPlayer1.Location = new Point(589, 205);
+            HudPlayer1.Location = new Point(583, 238);
             HudPlayer1.Name = "HudPlayer1";
             HudPlayer1.Size = new Size(100, 100);
             HudPlayer1.TabIndex = 21;
@@ -356,7 +364,7 @@ namespace Client
             HudPlayer2.BackColor = Color.Transparent;
             HudPlayer2.BackgroundImage = Properties.Resources.hudPlayer_yellow;
             HudPlayer2.BackgroundImageLayout = ImageLayout.Stretch;
-            HudPlayer2.Location = new Point(789, 205);
+            HudPlayer2.Location = new Point(583, 362);
             HudPlayer2.Name = "HudPlayer2";
             HudPlayer2.Size = new Size(100, 100);
             HudPlayer2.TabIndex = 22;
@@ -368,7 +376,7 @@ namespace Client
             HudPlayer3.BackColor = Color.Transparent;
             HudPlayer3.BackgroundImage = Properties.Resources.hudPlayer_green;
             HudPlayer3.BackgroundImageLayout = ImageLayout.Stretch;
-            HudPlayer3.Location = new Point(589, 449);
+            HudPlayer3.Location = new Point(583, 486);
             HudPlayer3.Name = "HudPlayer3";
             HudPlayer3.Size = new Size(100, 100);
             HudPlayer3.TabIndex = 23;
@@ -380,7 +388,7 @@ namespace Client
             HudPlayer4.BackColor = Color.Transparent;
             HudPlayer4.BackgroundImage = Properties.Resources.hudPlayer_blue;
             HudPlayer4.BackgroundImageLayout = ImageLayout.Stretch;
-            HudPlayer4.Location = new Point(789, 449);
+            HudPlayer4.Location = new Point(583, 610);
             HudPlayer4.Name = "HudPlayer4";
             HudPlayer4.Size = new Size(100, 100);
             HudPlayer4.TabIndex = 24;
@@ -402,6 +410,102 @@ namespace Client
             btn_play.UseVisualStyleBackColor = true;
             btn_play.Click += btn_play_Click;
             // 
+            // lbl_player1_name
+            // 
+            lbl_player1_name.AutoSize = true;
+            lbl_player1_name.BackColor = Color.Transparent;
+            lbl_player1_name.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player1_name.Location = new Point(698, 261);
+            lbl_player1_name.Name = "lbl_player1_name";
+            lbl_player1_name.Size = new Size(111, 36);
+            lbl_player1_name.TabIndex = 26;
+            lbl_player1_name.Text = "Name";
+            lbl_player1_name.Visible = false;
+            // 
+            // lbl_player1_ans
+            // 
+            lbl_player1_ans.AutoSize = true;
+            lbl_player1_ans.BackColor = Color.Transparent;
+            lbl_player1_ans.Font = new Font("KenVector Future Thin", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player1_ans.Location = new Point(698, 297);
+            lbl_player1_ans.Name = "lbl_player1_ans";
+            lbl_player1_ans.Size = new Size(44, 41);
+            lbl_player1_ans.TabIndex = 27;
+            lbl_player1_ans.Text = "0";
+            lbl_player1_ans.Visible = false;
+            // 
+            // lbl_player2_ans
+            // 
+            lbl_player2_ans.AutoSize = true;
+            lbl_player2_ans.BackColor = Color.Transparent;
+            lbl_player2_ans.Font = new Font("KenVector Future Thin", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player2_ans.Location = new Point(698, 421);
+            lbl_player2_ans.Name = "lbl_player2_ans";
+            lbl_player2_ans.Size = new Size(44, 41);
+            lbl_player2_ans.TabIndex = 29;
+            lbl_player2_ans.Text = "0";
+            lbl_player2_ans.Visible = false;
+            // 
+            // lbl_player2_name
+            // 
+            lbl_player2_name.AutoSize = true;
+            lbl_player2_name.BackColor = Color.Transparent;
+            lbl_player2_name.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player2_name.Location = new Point(698, 385);
+            lbl_player2_name.Name = "lbl_player2_name";
+            lbl_player2_name.Size = new Size(111, 36);
+            lbl_player2_name.TabIndex = 28;
+            lbl_player2_name.Text = "Name";
+            lbl_player2_name.Visible = false;
+            // 
+            // lbl_player3_ans
+            // 
+            lbl_player3_ans.AutoSize = true;
+            lbl_player3_ans.BackColor = Color.Transparent;
+            lbl_player3_ans.Font = new Font("KenVector Future Thin", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player3_ans.Location = new Point(698, 545);
+            lbl_player3_ans.Name = "lbl_player3_ans";
+            lbl_player3_ans.Size = new Size(44, 41);
+            lbl_player3_ans.TabIndex = 31;
+            lbl_player3_ans.Text = "0";
+            lbl_player3_ans.Visible = false;
+            // 
+            // lbl_player3_name
+            // 
+            lbl_player3_name.AutoSize = true;
+            lbl_player3_name.BackColor = Color.Transparent;
+            lbl_player3_name.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player3_name.Location = new Point(698, 509);
+            lbl_player3_name.Name = "lbl_player3_name";
+            lbl_player3_name.Size = new Size(111, 36);
+            lbl_player3_name.TabIndex = 30;
+            lbl_player3_name.Text = "Name";
+            lbl_player3_name.Visible = false;
+            // 
+            // lbl_player4_ans
+            // 
+            lbl_player4_ans.AutoSize = true;
+            lbl_player4_ans.BackColor = Color.Transparent;
+            lbl_player4_ans.Font = new Font("KenVector Future Thin", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player4_ans.Location = new Point(698, 669);
+            lbl_player4_ans.Name = "lbl_player4_ans";
+            lbl_player4_ans.Size = new Size(44, 41);
+            lbl_player4_ans.TabIndex = 33;
+            lbl_player4_ans.Text = "0";
+            lbl_player4_ans.Visible = false;
+            // 
+            // lbl_player4_name
+            // 
+            lbl_player4_name.AutoSize = true;
+            lbl_player4_name.BackColor = Color.Transparent;
+            lbl_player4_name.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player4_name.Location = new Point(698, 633);
+            lbl_player4_name.Name = "lbl_player4_name";
+            lbl_player4_name.Size = new Size(111, 36);
+            lbl_player4_name.TabIndex = 32;
+            lbl_player4_name.Text = "Name";
+            lbl_player4_name.Visible = false;
+            // 
             // GameUI
             // 
             AutoScaleDimensions = new SizeF(14F, 30F);
@@ -409,6 +513,14 @@ namespace Client
             BackgroundImage = Properties.Resources.blue_land;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1414, 819);
+            Controls.Add(lbl_player4_ans);
+            Controls.Add(lbl_player4_name);
+            Controls.Add(lbl_player3_ans);
+            Controls.Add(lbl_player3_name);
+            Controls.Add(lbl_player2_ans);
+            Controls.Add(lbl_player2_name);
+            Controls.Add(lbl_player1_ans);
+            Controls.Add(lbl_player1_name);
             Controls.Add(btn_play);
             Controls.Add(HudPlayer4);
             Controls.Add(HudPlayer3);
@@ -475,5 +587,13 @@ namespace Client
         private PictureBox HudPlayer3;
         private PictureBox HudPlayer4;
         private Button btn_play;
+        private Label lbl_player1_name;
+        private Label lbl_player1_ans;
+        private Label lbl_player2_ans;
+        private Label lbl_player2_name;
+        private Label lbl_player3_ans;
+        private Label lbl_player3_name;
+        private Label lbl_player4_ans;
+        private Label lbl_player4_name;
     }
 }
