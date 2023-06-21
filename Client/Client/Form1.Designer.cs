@@ -143,6 +143,8 @@ namespace Client
             tb_play.Name = "tb_play";
             tb_play.Size = new Size(230, 51);
             tb_play.TabIndex = 5;
+            tb_play.KeyDown += tb_play_KeyDown;
+            tb_play.KeyPress += tb_play_KeyPress;
             // 
             // lbl_state
             // 

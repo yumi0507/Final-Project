@@ -26,6 +26,7 @@ namespace Client
         TcpClient client;
         List<ClientState> players;
         Thread Listen_to_Server;
+        private bool nonNum;
 
         private delegate void DelYourTurn();
         private delegate void DelStopAction(bool end);
@@ -163,7 +164,7 @@ namespace Client
                                 }
                             case "EN":
                                 {
-                                    StopAction(true);
+                                    Close();
                                     break;
                                 }
                         }
@@ -325,6 +326,29 @@ namespace Client
                     Send("EN" + myiD);
                 }
             }
+        }
+
+        public bool Check()
+        {
+            List<int> list = new List<int>() { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            string text = tb_play.Text;
+            for (int i = 0; i < 4; i++)
+            {
+                int num = text[i] - '0';
+                list[num]++;
+            }
+
+            bool pass = true;
+            foreach (int count in list)
+            {
+                if (count > 1)
+                {
+                    pass = false;
+                    break;
+                }
+            }
+
+            return pass;
         }
         #endregion
         #region Num Button
@@ -515,6 +539,17 @@ namespace Client
                 MessageBox.Show("You haven't done your answering.");
                 return;
             }
+            else if (tb_play.Text.Length > 4)
+            {
+                MessageBox.Show("Your answer length is too long.\nIt must be 4.");
+                return;
+            }
+            else if (!Check())
+            {
+                MessageBox.Show("Your answer has duplicated numbers.");
+                return;
+            }
+
 
             if (players[myID].Ques)
             {
@@ -527,6 +562,46 @@ namespace Client
             }
 
             StopAction();
+        }
+
+        private void tb_play_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNum = false;
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_send_Click(this, new EventArgs());
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                btn_back_Click(this, new EventArgs());
+            }
+            else if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                // Determine whether the keystroke is a number from the keypad.
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    // Determine whether the keystroke is a backspace.
+                    if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Back)
+                    {
+                        // A non-numerical keystroke was pressed.
+                        // Set the flag to true and evaluate in KeyPress event.
+                        nonNum = true;
+                    }
+                }
+            }
+            //If shift key was pressed, it's not a number.
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                nonNum = true;
+            }
+        }
+
+        private void tb_play_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!btn_send.Enabled || nonNum || tb_play.Text.Length > 3)
+            {
+                e.Handled = true;
+            }
         }
         #endregion
         #region List

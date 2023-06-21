@@ -164,7 +164,10 @@ namespace Server
                                 }
                             case "EN":
                                 {
-                                    quesID = -1;
+                                    for (int i = 0; i < players.Count; i++)
+                                    {
+                                        SendToClient(i, "EN", players[i].Socket);
+                                    }
                                     break;
                                 }
                             default:
