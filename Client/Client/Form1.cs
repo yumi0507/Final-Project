@@ -161,6 +161,11 @@ namespace Client
                                     ADD_TO_LIST("The Ans: " + ans);
                                     break;
                                 }
+                            case "EN":
+                                {
+                                    StopAction(true);
+                                    break;
+                                }
                         }
                     }
                 }
@@ -317,7 +322,7 @@ namespace Client
                     endl();
                     ADD_TO_LIST(players[ID].Name + " is the winner!");
                     MessageBox.Show(players[ID].Name + " is the winner!");
-                    StopAction(true);
+                    Send("EN" + myiD);
                 }
             }
         }

@@ -88,37 +88,37 @@ namespace Client
             // 
             lbl_name.AutoSize = true;
             lbl_name.BackColor = Color.Transparent;
-            lbl_name.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_name.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_name.Location = new Point(146, 81);
             lbl_name.Name = "lbl_name";
-            lbl_name.Size = new Size(111, 36);
+            lbl_name.Size = new Size(99, 43);
             lbl_name.TabIndex = 0;
             lbl_name.Text = "Name";
             // 
             // tb_name
             // 
-            tb_name.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            tb_name.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             tb_name.Location = new Point(263, 74);
             tb_name.Name = "tb_name";
-            tb_name.Size = new Size(200, 48);
+            tb_name.Size = new Size(200, 51);
             tb_name.TabIndex = 1;
             // 
             // tb_IP
             // 
-            tb_IP.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            tb_IP.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             tb_IP.Location = new Point(533, 74);
             tb_IP.Name = "tb_IP";
-            tb_IP.Size = new Size(300, 48);
+            tb_IP.Size = new Size(300, 51);
             tb_IP.TabIndex = 3;
             // 
             // lbl_IP
             // 
             lbl_IP.AutoSize = true;
             lbl_IP.BackColor = Color.Transparent;
-            lbl_IP.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_IP.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_IP.Location = new Point(478, 81);
             lbl_IP.Name = "lbl_IP";
-            lbl_IP.Size = new Size(49, 36);
+            lbl_IP.Size = new Size(59, 43);
             lbl_IP.TabIndex = 2;
             lbl_IP.Text = "IP";
             // 
@@ -126,7 +126,7 @@ namespace Client
             // 
             btn_connect.BackgroundImage = Properties.Resources.yellow_button00;
             btn_connect.BackgroundImageLayout = ImageLayout.Stretch;
-            btn_connect.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_connect.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             btn_connect.ForeColor = Color.Peru;
             btn_connect.Location = new Point(876, 64);
             btn_connect.Name = "btn_connect";
@@ -138,38 +138,38 @@ namespace Client
             // 
             // tb_play
             // 
-            tb_play.Font = new Font("KenVector Future Thin", 16.125F, FontStyle.Regular, GraphicsUnit.Point);
+            tb_play.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             tb_play.Location = new Point(146, 205);
             tb_play.Name = "tb_play";
-            tb_play.Size = new Size(230, 56);
+            tb_play.Size = new Size(230, 51);
             tb_play.TabIndex = 5;
             // 
             // lbl_state
             // 
             lbl_state.AutoSize = true;
             lbl_state.BackColor = Color.Transparent;
-            lbl_state.Font = new Font("KenVector Future Thin", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_state.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_state.Location = new Point(146, 153);
             lbl_state.Name = "lbl_state";
-            lbl_state.Size = new Size(209, 41);
+            lbl_state.Size = new Size(219, 43);
             lbl_state.TabIndex = 6;
             lbl_state.Text = "Waiting...";
             // 
             // listBox1
             // 
-            listBox1.Font = new Font("KenVector Future Thin", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            listBox1.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 31;
+            listBox1.ItemHeight = 37;
             listBox1.Location = new Point(876, 205);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(473, 500);
+            listBox1.Size = new Size(473, 485);
             listBox1.TabIndex = 7;
             // 
             // btn_send
             // 
             btn_send.BackgroundImage = Properties.Resources.yellow_button00;
             btn_send.BackgroundImageLayout = ImageLayout.Stretch;
-            btn_send.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_send.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             btn_send.ForeColor = Color.Peru;
             btn_send.Location = new Point(401, 171);
             btn_send.Name = "btn_send";
@@ -183,7 +183,7 @@ namespace Client
             // 
             button1.BackgroundImage = Properties.Resources.blue_button08;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.AliceBlue;
             button1.Location = new Point(146, 283);
             button1.Name = "button1";
@@ -197,7 +197,7 @@ namespace Client
             // 
             button2.BackgroundImage = Properties.Resources.blue_button08;
             button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.AliceBlue;
             button2.Location = new Point(286, 283);
             button2.Name = "button2";
@@ -211,7 +211,7 @@ namespace Client
             // 
             button3.BackgroundImage = Properties.Resources.blue_button08;
             button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.AliceBlue;
             button3.Location = new Point(423, 283);
             button3.Name = "button3";
@@ -225,7 +225,7 @@ namespace Client
             // 
             button4.BackgroundImage = Properties.Resources.blue_button08;
             button4.BackgroundImageLayout = ImageLayout.Stretch;
-            button4.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.AliceBlue;
             button4.Location = new Point(146, 395);
             button4.Name = "button4";
@@ -239,7 +239,7 @@ namespace Client
             // 
             button5.BackgroundImage = Properties.Resources.blue_button08;
             button5.BackgroundImageLayout = ImageLayout.Stretch;
-            button5.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button5.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.AliceBlue;
             button5.Location = new Point(286, 395);
             button5.Name = "button5";
@@ -253,7 +253,7 @@ namespace Client
             // 
             button6.BackgroundImage = Properties.Resources.blue_button08;
             button6.BackgroundImageLayout = ImageLayout.Stretch;
-            button6.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button6.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.AliceBlue;
             button6.Location = new Point(423, 395);
             button6.Name = "button6";
@@ -267,7 +267,7 @@ namespace Client
             // 
             button7.BackgroundImage = Properties.Resources.blue_button08;
             button7.BackgroundImageLayout = ImageLayout.Stretch;
-            button7.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button7.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = Color.AliceBlue;
             button7.Location = new Point(146, 507);
             button7.Name = "button7";
@@ -281,7 +281,7 @@ namespace Client
             // 
             button8.BackgroundImage = Properties.Resources.blue_button08;
             button8.BackgroundImageLayout = ImageLayout.Stretch;
-            button8.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button8.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button8.ForeColor = Color.AliceBlue;
             button8.Location = new Point(286, 507);
             button8.Name = "button8";
@@ -295,7 +295,7 @@ namespace Client
             // 
             button9.BackgroundImage = Properties.Resources.blue_button08;
             button9.BackgroundImageLayout = ImageLayout.Stretch;
-            button9.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button9.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button9.ForeColor = Color.AliceBlue;
             button9.Location = new Point(423, 507);
             button9.Name = "button9";
@@ -309,7 +309,7 @@ namespace Client
             // 
             button0.BackgroundImage = Properties.Resources.blue_button08;
             button0.BackgroundImageLayout = ImageLayout.Stretch;
-            button0.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button0.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             button0.ForeColor = Color.AliceBlue;
             button0.Location = new Point(286, 620);
             button0.Name = "button0";
@@ -323,7 +323,7 @@ namespace Client
             // 
             btn_clear.BackgroundImage = Properties.Resources.green_button07;
             btn_clear.BackgroundImageLayout = ImageLayout.Stretch;
-            btn_clear.Font = new Font("KenVector Future Thin", 16.125F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_clear.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             btn_clear.ForeColor = Color.AliceBlue;
             btn_clear.Location = new Point(146, 620);
             btn_clear.Name = "btn_clear";
@@ -337,13 +337,13 @@ namespace Client
             // 
             btn_back.BackgroundImage = Properties.Resources.green_button07;
             btn_back.BackgroundImageLayout = ImageLayout.Stretch;
-            btn_back.Font = new Font("KenVector Future Thin", 16.125F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_back.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             btn_back.ForeColor = Color.AliceBlue;
             btn_back.Location = new Point(423, 620);
             btn_back.Name = "btn_back";
             btn_back.Size = new Size(90, 90);
             btn_back.TabIndex = 20;
-            btn_back.Text = "(-";
+            btn_back.Text = "<-";
             btn_back.UseVisualStyleBackColor = true;
             btn_back.Click += btn_back_Click;
             // 
@@ -400,7 +400,7 @@ namespace Client
             btn_play.BackgroundImage = Properties.Resources.yellow_button00;
             btn_play.BackgroundImageLayout = ImageLayout.Stretch;
             btn_play.Enabled = false;
-            btn_play.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_play.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             btn_play.ForeColor = Color.Peru;
             btn_play.Location = new Point(1100, 64);
             btn_play.Name = "btn_play";
@@ -414,10 +414,10 @@ namespace Client
             // 
             lbl_player1_name.AutoSize = true;
             lbl_player1_name.BackColor = Color.Transparent;
-            lbl_player1_name.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player1_name.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_player1_name.Location = new Point(698, 261);
             lbl_player1_name.Name = "lbl_player1_name";
-            lbl_player1_name.Size = new Size(111, 36);
+            lbl_player1_name.Size = new Size(99, 43);
             lbl_player1_name.TabIndex = 26;
             lbl_player1_name.Text = "Name";
             lbl_player1_name.Visible = false;
@@ -426,10 +426,10 @@ namespace Client
             // 
             lbl_player1_ans.AutoSize = true;
             lbl_player1_ans.BackColor = Color.Transparent;
-            lbl_player1_ans.Font = new Font("KenVector Future Thin", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player1_ans.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_player1_ans.Location = new Point(698, 297);
             lbl_player1_ans.Name = "lbl_player1_ans";
-            lbl_player1_ans.Size = new Size(44, 41);
+            lbl_player1_ans.Size = new Size(39, 43);
             lbl_player1_ans.TabIndex = 27;
             lbl_player1_ans.Text = "0";
             lbl_player1_ans.Visible = false;
@@ -438,10 +438,10 @@ namespace Client
             // 
             lbl_player2_ans.AutoSize = true;
             lbl_player2_ans.BackColor = Color.Transparent;
-            lbl_player2_ans.Font = new Font("KenVector Future Thin", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player2_ans.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_player2_ans.Location = new Point(698, 421);
             lbl_player2_ans.Name = "lbl_player2_ans";
-            lbl_player2_ans.Size = new Size(44, 41);
+            lbl_player2_ans.Size = new Size(39, 43);
             lbl_player2_ans.TabIndex = 29;
             lbl_player2_ans.Text = "0";
             lbl_player2_ans.Visible = false;
@@ -450,10 +450,10 @@ namespace Client
             // 
             lbl_player2_name.AutoSize = true;
             lbl_player2_name.BackColor = Color.Transparent;
-            lbl_player2_name.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player2_name.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_player2_name.Location = new Point(698, 385);
             lbl_player2_name.Name = "lbl_player2_name";
-            lbl_player2_name.Size = new Size(111, 36);
+            lbl_player2_name.Size = new Size(99, 43);
             lbl_player2_name.TabIndex = 28;
             lbl_player2_name.Text = "Name";
             lbl_player2_name.Visible = false;
@@ -462,10 +462,10 @@ namespace Client
             // 
             lbl_player3_ans.AutoSize = true;
             lbl_player3_ans.BackColor = Color.Transparent;
-            lbl_player3_ans.Font = new Font("KenVector Future Thin", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player3_ans.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_player3_ans.Location = new Point(698, 545);
             lbl_player3_ans.Name = "lbl_player3_ans";
-            lbl_player3_ans.Size = new Size(44, 41);
+            lbl_player3_ans.Size = new Size(39, 43);
             lbl_player3_ans.TabIndex = 31;
             lbl_player3_ans.Text = "0";
             lbl_player3_ans.Visible = false;
@@ -474,10 +474,10 @@ namespace Client
             // 
             lbl_player3_name.AutoSize = true;
             lbl_player3_name.BackColor = Color.Transparent;
-            lbl_player3_name.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player3_name.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_player3_name.Location = new Point(698, 509);
             lbl_player3_name.Name = "lbl_player3_name";
-            lbl_player3_name.Size = new Size(111, 36);
+            lbl_player3_name.Size = new Size(99, 43);
             lbl_player3_name.TabIndex = 30;
             lbl_player3_name.Text = "Name";
             lbl_player3_name.Visible = false;
@@ -486,10 +486,10 @@ namespace Client
             // 
             lbl_player4_ans.AutoSize = true;
             lbl_player4_ans.BackColor = Color.Transparent;
-            lbl_player4_ans.Font = new Font("KenVector Future Thin", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player4_ans.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_player4_ans.Location = new Point(698, 669);
             lbl_player4_ans.Name = "lbl_player4_ans";
-            lbl_player4_ans.Size = new Size(44, 41);
+            lbl_player4_ans.Size = new Size(39, 43);
             lbl_player4_ans.TabIndex = 33;
             lbl_player4_ans.Text = "0";
             lbl_player4_ans.Visible = false;
@@ -498,10 +498,10 @@ namespace Client
             // 
             lbl_player4_name.AutoSize = true;
             lbl_player4_name.BackColor = Color.Transparent;
-            lbl_player4_name.Font = new Font("KenVector Future Thin", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_player4_name.Font = new Font("Consolas", 13.875F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_player4_name.Location = new Point(698, 633);
             lbl_player4_name.Name = "lbl_player4_name";
-            lbl_player4_name.Size = new Size(111, 36);
+            lbl_player4_name.Size = new Size(99, 43);
             lbl_player4_name.TabIndex = 32;
             lbl_player4_name.Text = "Name";
             lbl_player4_name.Visible = false;

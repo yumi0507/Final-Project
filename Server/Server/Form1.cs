@@ -89,7 +89,6 @@ namespace Server
         {
             TcpClient this_client = (TcpClient)obj;
             NetworkStream networkStream = this_client.GetStream();
- //           int this_client_ID = current_client_id_count;
             while (true)
             {
                 if (networkStream.CanRead)
@@ -163,6 +162,11 @@ namespace Server
                                     }
                                     break;
                                 }
+                            case "EN":
+                                {
+                                    quesID = -1;
+                                    break;
+                                }
                             default:
                                 MessageBox.Show("Wrong instruction");
                                 break;
@@ -182,7 +186,7 @@ namespace Server
                 {
                     networkStream.Write(data, 0, data.Length);
                     ADD_TO_LIST("SND- '" + Mesaage + "' to Client " + Client_ID);
-                    Thread.Sleep(50);
+                    Thread.Sleep(100);
                 }
                 else
                     ADD_TO_LIST("Fail to sent to Client " + Client_ID);
@@ -227,6 +231,8 @@ namespace Server
 
         public void Next(bool ques = false)
         {
+            if (quesID < 0)
+                return;
             if (ques)
             {
                 if (quesID == players.Count - 1)
@@ -269,7 +275,9 @@ namespace Server
                 Next(true);
             for (int i = 0; i < players.Count; i++)
             {
-                if (i == quesID)
+                if (quesID < 0)
+                    break;
+                else if (i == quesID)
                     SendToClient(i, "YTQ", players[i].Socket);    // Your Turn to Qusetion
                 else
                     SendToClient(i, "NQ" + quesID.ToString(), players[i].Socket);    // Next Question from quesID
